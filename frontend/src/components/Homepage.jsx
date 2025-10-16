@@ -8,20 +8,32 @@ export default function Homepage() {
     {
       title: "Find Your Perfect Car Today",
       subtitle: "Trusted Cars, Unbeatable Prices",
-      image: "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80",
+      image: "https://images.unsplash.com/photo-1727098353953-929512ce7b90?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8YnlkJTIwY2FyfGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=600",
       cta: "Explore Inventory"
     },
     {
       title: "Premium Pre-Owned Vehicles",
       subtitle: "Certified Quality, Guaranteed Satisfaction",
-      image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80",
+      image: "https://images.unsplash.com/photo-1728469876516-17a32611eb24?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YnlkJTIwY2FyfGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=600",
       cta: "View Premium Cars"
     },
     {
       title: "Best Financing Options",
       subtitle: "Drive Home Today with Flexible Payments",
-      image: "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80",
+      image: "https://images.unsplash.com/photo-1655015887321-5826a531e7ce?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8U3V6dWtpJTIwY2FyfGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=600",
       cta: "Get Financing"
+    },
+    {
+      title: "Luxury & Performance",
+      subtitle: "Experience the Best in Automotive Excellence",
+      image: "https://images.unsplash.com/photo-1571987502227-9231b837d92a?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGVsZWN0cmljJTIwY2FyfGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=600",
+      cta: "Discover Luxury"
+    },
+    {
+      title: "Family Friendly Vehicles",
+      subtitle: "Safe, Reliable Transportation for Your Loved Ones",
+      image: "https://media.istockphoto.com/id/1502960058/photo/electric-sports-car-driving-along-coastal-road.jpg?s=612x612&w=0&k=20&c=s6-zlGJob0bJBzPgip54mqf-zkTqMHPP6OIAR3eVlhY=",
+      cta: "Find Family Cars"
     }
   ];
 
@@ -35,7 +47,7 @@ export default function Homepage() {
   const featuredCars = [
     {
       id: 1,
-      image: "https://images.unsplash.com/photo-1549924231-f129b911e442?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      image: "https://images.unsplash.com/photo-1727098353953-929512ce7b90?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8YnlkJTIwY2FyfGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=600",
       title: "Toyota Camry 2020",
       description: "Excellent condition, low mileage",
       price: 18500,
@@ -43,7 +55,7 @@ export default function Homepage() {
     },
     {
       id: 2,
-      image: "https://images.unsplash.com/photo-1555215695-3004980ad54e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      image: "https://images.unsplash.com/photo-1728469876516-17a32611eb24?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YnlkJTIwY2FyfGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=600",
       title: "Honda Civic 2019",
       description: "One owner, full service history",
       price: 16200,
@@ -51,7 +63,7 @@ export default function Homepage() {
     },
     {
       id: 3,
-      image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      image: "https://images.unsplash.com/photo-1655015887321-5826a531e7ce?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8U3V6dWtpJTIwY2FyfGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=600",
       title: "Ford Mustang 2021",
       description: "Sporty and powerful",
       price: 32000,
@@ -70,6 +82,12 @@ export default function Homepage() {
     <div className="animate-fade-in">
       {/* Hero Section */}
       <section className="relative h-screen flex items-center overflow-hidden">
+        <style jsx>{`
+          .hero-image {
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: crisp-edges;
+          }
+        `}</style>
         {/* Background Slides */}
         {heroSlides.map((slide, index) => (
           <div
@@ -83,6 +101,11 @@ export default function Homepage() {
               src={slide.image}
               alt={slide.title}
               className="w-full h-full object-cover scale-105"
+              style={{
+                WebkitImageRendering: 'pixelated',
+                MozImageRendering: 'crisp-edges',
+                imageRendering: 'pixelated'
+              }}
             />
           </div>
         ))}
