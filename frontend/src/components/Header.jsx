@@ -24,7 +24,7 @@ export default function Header() {
               to="/"
               className="text-2xl lg:text-3xl font-display font-bold text-white hover:text-primary-400 transition-all duration-300"
             >
-              CarDealership
+              ELITE Cars
             </Link>
 
             {/* Desktop Navigation */}
@@ -55,12 +55,12 @@ export default function Header() {
               >
                 📞 Call Now
               </a>
-              <a
+              {/* <a
                 href="https://wa.me/1234567890"
                 className="bg-green-600 hover:bg-green-700 text-white font-semibold px-4 py-2 rounded-lg transition-all duration-200 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 shadow-soft hover:shadow-medium text-sm"
               >
                 💬 WhatsApp
-              </a>
+              </a> */}
             </div>
 
             {/* Mobile Menu Button */}
@@ -120,12 +120,12 @@ export default function Header() {
                 >
                   📞 Call Now
                 </a>
-                <a
+                {/* <a
                   href="https://wa.me/1234567890"
                   className="block bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-4 rounded-lg text-center transition-all duration-200 text-sm"
                 >
                   💬 WhatsApp
-                </a>
+                </a> */}
               </div>
             </div>
           )}

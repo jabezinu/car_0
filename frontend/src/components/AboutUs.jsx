@@ -34,7 +34,7 @@ export default function AboutUs() {
       name: "John Smith",
       role: "Founder & CEO",
       image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-      bio: "With over 20 years in the automotive industry, John founded CarDealership with a vision to revolutionize the car buying experience."
+      bio: "With over 20 years in the automotive industry, John founded ELITE Cars with a vision to revolutionize the car buying experience."
     },
     {
       name: "Sarah Johnson",
@@ -55,7 +55,7 @@ export default function AboutUs() {
       name: "Emily Chen",
       rating: 5,
       image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80",
-      text: "I found my dream car at CarDealership! The staff was incredibly helpful and transparent about the vehicle's history. The financing process was smooth and the rates were competitive. Highly recommend!",
+      text: "I found my dream car at ELITE Cars! The staff was incredibly helpful and transparent about the vehicle's history. The financing process was smooth and the rates were competitive. Highly recommend!",
       car: "Toyota Camry 2020"
     },
     {
@@ -69,7 +69,7 @@ export default function AboutUs() {
       name: "Maria Garcia",
       rating: 5,
       image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80",
-      text: "As a first-time car buyer, I was nervous, but the team at CarDealership made the entire process stress-free. They answered all my questions and helped me choose the perfect car for my needs.",
+      text: "As a first-time car buyer, I was nervous, but the team at ELITE Cars made the entire process stress-free. They answered all my questions and helped me choose the perfect car for my needs.",
       car: "Ford Mustang 2021"
     }
   ];
@@ -89,7 +89,7 @@ export default function AboutUs() {
         <div className="relative container mx-auto container-padding py-20 lg:py-32">
           <div className="text-center max-w-4xl mx-auto">
             <h1 className="text-4xl lg:text-6xl font-display font-bold mb-6 animate-slide-up">
-              About CarDealership
+              About ELITE Cars
             </h1>
             <p className="text-xl lg:text-2xl text-neutral-200 mb-8 animate-slide-up" style={{animationDelay: '0.2s'}}>
               Where Trust Meets Automotive Excellence
@@ -138,7 +138,7 @@ export default function AboutUs() {
               </h2>
               <div className="space-y-4 text-neutral-700 leading-relaxed">
                 <p>
-                  Founded in 2009, CarDealership began as a small family business with a big dream:
+                  Founded in 2009, ELITE Cars began as a small family business with a big dream:
                   to revolutionize the car buying experience. What started in a modest showroom has
                   grown into one of the most trusted dealerships in the region.
                 </p>
@@ -302,7 +302,7 @@ export default function AboutUs() {
             Ready to Find Your Perfect Car?
           </h2>
           <p className="text-xl text-primary-100 mb-8 max-w-2xl mx-auto">
-            Visit us today and experience the CarDealership difference.
+            Visit us today and experience the ELITE Cars difference.
             We're here to make your car buying journey exceptional.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

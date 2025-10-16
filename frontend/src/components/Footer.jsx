@@ -34,7 +34,7 @@ export default function Footer() {
                 to="/"
                 className="text-2xl font-display font-bold bg-gradient-to-r from-white to-neutral-300 bg-clip-text text-transparent mb-4 inline-block"
               >
-                CarDealership
+                ELITE Cars
               </Link>
               <p className="text-neutral-400 mb-6 leading-relaxed">
                 Your trusted source for quality pre-owned vehicles. We provide exceptional service and competitive pricing with a commitment to customer satisfaction.
@@ -170,7 +170,7 @@ export default function Footer() {
           <div className="container mx-auto container-padding py-6">
             <div className="flex flex-col md:flex-row items-center justify-between gap-4">
               <p className="text-neutral-500 text-sm">
-                &copy; {currentYear} CarDealership. All rights reserved.
+                &copy; {currentYear} ELITE Cars. All rights reserved.
               </p>
               <div className="flex flex-wrap items-center gap-6 text-sm">
                 <Link to="#" className="text-neutral-500 hover:text-white transition-colors duration-200">

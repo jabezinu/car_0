@@ -211,7 +211,7 @@ export default function Homepage() {
         <div className="container mx-auto container-padding">
           <div className="text-center mb-16">
             <h2 className="text-4xl lg:text-5xl font-display font-bold text-neutral-900 mb-4">
-              Why Choose CarDealership?
+              Why Choose ELITE Cars?
             </h2>
             <p className="text-xl text-neutral-600 max-w-3xl mx-auto">
               We're committed to providing an exceptional car buying experience with transparency, quality, and customer satisfaction at our core.
