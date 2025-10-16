@@ -102,7 +102,7 @@ export default function CarDetails() {
               </h1>
               <div className="flex items-center gap-2 mb-4">
                 <span className="text-3xl font-bold text-primary-600">
-                  ${car.price.toLocaleString()}
+                  {car.price.toLocaleString()}ETB
                 </span>
                 <span className="text-sm text-neutral-500">MSRP</span>
               </div>
@@ -153,7 +153,7 @@ export default function CarDetails() {
               </h3>
               <div className="text-center mb-4">
                 <div className="text-3xl font-bold text-green-600 mb-1">
-                  ${Math.round(car.price / 60).toLocaleString()}
+                  {Math.round(car.price / 60).toLocaleString()}ETB
                 </div>
                 <div className="text-sm text-neutral-600">Monthly Payment</div>
                 <div className="text-xs text-neutral-500">60-month term at 5% APR</div>
@@ -346,7 +346,7 @@ export default function CarDetails() {
                       {relatedCar.year} {relatedCar.make} {relatedCar.model}
                     </h3>
                     <p className="text-2xl font-bold text-primary-600 mt-2">
-                      ${relatedCar.price.toLocaleString()}
+                      {relatedCar.price.toLocaleString()}ETB
                     </p>
                   </div>
                 </Link>

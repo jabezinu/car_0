@@ -207,7 +207,7 @@ export default function Homepage() {
                   <p className="text-neutral-600 mb-4">{car.description}</p>
                   <div className="flex items-center justify-between">
                     <p className="text-2xl font-bold text-primary-600">
-                      ${car.price.toLocaleString()}
+                      {car.price.toLocaleString()}ETB
                     </p>
                     <Link
                       to={`/cars/${car.id}`}

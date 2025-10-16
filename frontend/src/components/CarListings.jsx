@@ -134,7 +134,7 @@ export default function CarListings() {
               {/* Price Range */}
               <div className="mb-6">
                 <label className="block text-sm font-medium text-neutral-700 mb-2">
-                  Price Range: ${priceRange[0].toLocaleString()} - ${priceRange[1].toLocaleString()}
+                  Price Range: {priceRange[0].toLocaleString()}ETB - {priceRange[1].toLocaleString()}ETB
                 </label>
                 <input
                   type="range"
@@ -237,7 +237,7 @@ export default function CarListings() {
                           {car.year} {car.make} {car.model}
                         </h3>
                         <span className="text-2xl font-bold text-primary-600">
-                          ${car.price.toLocaleString()}
+                          {car.price.toLocaleString()}ETB
                         </span>
                       </div>
 
