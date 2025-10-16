@@ -3,11 +3,8 @@ import { useState } from 'react';
 export default function Contact() {
   const [formData, setFormData] = useState({
     name: '',
-    email: '',
     phone: '',
-    subject: '',
-    message: '',
-    inquiryType: 'general'
+    message: ''
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -30,11 +27,8 @@ export default function Contact() {
     setSubmitStatus('success');
     setFormData({
       name: '',
-      email: '',
       phone: '',
-      subject: '',
-      message: '',
-      inquiryType: 'general'
+      message: ''
     });
     setIsSubmitting(false);
 
@@ -80,13 +74,6 @@ export default function Contact() {
     { icon: '🛠️', title: 'Schedule Service', color: 'bg-neutral-600 hover:bg-neutral-700' }
   ];
 
-  const inquiryTypes = [
-    { value: 'general', label: 'General Inquiry' },
-    { value: 'sales', label: 'Sales Question' },
-    { value: 'service', label: 'Service Request' },
-    { value: 'financing', label: 'Financing' },
-    { value: 'trade-in', label: 'Trade-In' }
-  ];
 
   return (
     <div className="min-h-screen bg-neutral-50">
@@ -124,87 +111,34 @@ export default function Contact() {
               )}
 
               <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-neutral-700 mb-2">
-                      Full Name *
-                    </label>
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      required
-                      className="input-field"
-                      placeholder="Your full name"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-neutral-700 mb-2">
-                      Email Address *
-                    </label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      required
-                      className="input-field"
-                      placeholder="your@email.com"
-                    />
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label htmlFor="phone" className="block text-sm font-medium text-neutral-700 mb-2">
-                      Phone Number
-                    </label>
-                    <input
-                      type="tel"
-                      id="phone"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      className="input-field"
-                      placeholder="(234) 567-8900"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="inquiryType" className="block text-sm font-medium text-neutral-700 mb-2">
-                      Inquiry Type
-                    </label>
-                    <select
-                      id="inquiryType"
-                      name="inquiryType"
-                      value={formData.inquiryType}
-                      onChange={handleChange}
-                      className="input-field"
-                    >
-                      {inquiryTypes.map(type => (
-                        <option key={type.value} value={type.value}>
-                          {type.label}
-                        </option>
-                      ))}
-                    </select>
-                  </div>
-                </div>
-
                 <div>
-                  <label htmlFor="subject" className="block text-sm font-medium text-neutral-700 mb-2">
-                    Subject *
+                  <label htmlFor="name" className="block text-sm font-medium text-neutral-700 mb-2">
+                    Full Name *
                   </label>
                   <input
                     type="text"
-                    id="subject"
-                    name="subject"
-                    value={formData.subject}
+                    id="name"
+                    name="name"
+                    value={formData.name}
                     onChange={handleChange}
                     required
                     className="input-field"
-                    placeholder="Brief description of your inquiry"
+                    placeholder="Your full name"
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="phone" className="block text-sm font-medium text-neutral-700 mb-2">
+                    Phone Number
+                  </label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    className="input-field"
+                    placeholder="(234) 567-8900"
                   />
                 </div>
 
