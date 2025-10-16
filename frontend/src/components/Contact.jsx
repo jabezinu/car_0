@@ -67,12 +67,6 @@ export default function Contact() {
     }
   ];
 
-  const quickActions = [
-    { icon: '📅', title: 'Book Test Drive', color: 'bg-accent-500 hover:bg-accent-600' },
-    { icon: '💰', title: 'Get Financing', color: 'bg-green-500 hover:bg-green-600' },
-    { icon: '🔍', title: 'Trade-In Value', color: 'bg-primary-500 hover:bg-primary-600' },
-    { icon: '🛠️', title: 'Schedule Service', color: 'bg-neutral-600 hover:bg-neutral-700' }
-  ];
 
 
   return (
@@ -231,16 +225,16 @@ export default function Contact() {
             <div className="card bg-gradient-to-br from-white to-neutral-50 shadow-xl border-0">
               <h3 className="text-xl font-semibold text-neutral-900 mb-6 flex items-center">
                 <span className="text-2xl mr-3">🕒</span>
-                Business Hours
+                Business Hours (Addis Ababa Time)
               </h3>
               <div className="space-y-4">
                 <div className="flex justify-between items-center py-3 px-4 bg-green-50 rounded-lg border border-green-100">
                   <span className="text-neutral-700 font-medium">Monday - Friday</span>
-                  <span className="font-semibold text-green-700">9:00 AM - 7:00 PM</span>
+                  <span className="font-semibold text-green-700">8:00 AM - 6:00 PM</span>
                 </div>
                 <div className="flex justify-between items-center py-3 px-4 bg-blue-50 rounded-lg border border-blue-100">
                   <span className="text-neutral-700 font-medium">Saturday</span>
-                  <span className="font-semibold text-blue-700">9:00 AM - 5:00 PM</span>
+                  <span className="font-semibold text-blue-700">8:00 AM - 2:00 PM</span>
                 </div>
                 <div className="flex justify-between items-center py-3 px-4 bg-red-50 rounded-lg border border-red-100">
                   <span className="text-neutral-700 font-medium">Sunday</span>
@@ -249,24 +243,6 @@ export default function Contact() {
               </div>
             </div>
 
-            {/* Quick Actions */}
-            <div className="card bg-gradient-to-br from-white to-neutral-50 shadow-xl border-0">
-              <h3 className="text-xl font-semibold text-neutral-900 mb-6 flex items-center">
-                <span className="text-2xl mr-3">⚡</span>
-                Quick Actions
-              </h3>
-              <div className="grid grid-cols-1 gap-4">
-                {quickActions.map((action, index) => (
-                  <button
-                    key={index}
-                    className={`w-full ${action.color} text-white py-4 px-5 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-lg flex items-center justify-center gap-3 text-lg`}
-                  >
-                    <span className="text-2xl">{action.icon}</span>
-                    {action.title}
-                  </button>
-                ))}
-              </div>
-            </div>
           </div>
         </div>
 
@@ -278,13 +254,28 @@ export default function Contact() {
             </h2>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
               <div>
-                <div className="aspect-video bg-gradient-to-br from-neutral-100 to-neutral-200 rounded-2xl flex items-center justify-center mb-8 shadow-inner relative overflow-hidden">
-                  <div className="absolute inset-0 bg-cover bg-center opacity-20" style={{backgroundImage: 'url(/src/assets/image_1.jpg)'}}></div>
-                  <div className="text-center relative z-10">
-                    <span className="text-7xl mb-4 block animate-bounce">🗺️</span>
-                    <p className="text-neutral-700 font-semibold text-lg">Interactive Map</p>
-                    <p className="text-sm text-neutral-600">123 Car Street, City, State 12345</p>
-                  </div>
+                <div className="aspect-video rounded-2xl overflow-hidden mb-8 shadow-xl">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3001.7111658247995!2d38.755685!3d8.9989942!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x164b8500402c4367%3A0x6bc4423543fe9520!2zRUxJVEUgQ2FycyB8IOGKouGIiuGJtSDhiJjhiqrhipMg4YiY4Yi44Yyr!5e1!3m2!1sen!2set!4v1760579847019!5m2!1sen!2set"
+                    width="100%"
+                    height="100%"
+                    style={{border: 0}}
+                    allowFullScreen=""
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="ELITE Cars Location"
+                  ></iframe>
+                </div>
+                <div className="mb-6">
+                  <a
+                    href="https://www.google.com/maps/place/?q=place_id:ChIJx0LAVKCFDhMRgP7lQ0_CSrY"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-primary w-full text-center py-3 px-6 inline-flex items-center justify-center gap-2 text-lg"
+                  >
+                    <span>⭐</span>
+                    Leave a Review on Google Maps
+                  </a>
                 </div>
                 <div className="space-y-6">
                   <div className="flex items-start gap-4 p-4 bg-blue-50 rounded-xl border border-blue-100">
