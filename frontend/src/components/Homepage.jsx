@@ -82,7 +82,7 @@ export default function Homepage() {
             <img
               src={slide.image}
               alt={slide.title}
-              className="w-full h-full object-cover scale-105 animate-pulse"
+              className="w-full h-full object-cover scale-105"
             />
           </div>
         ))}
