@@ -12,7 +12,7 @@ export default function App() {
     <Router>
       <div className="min-h-screen bg-neutral-50">
         <Header />
-        <main className="flex-1">
+        <main className="flex-1 pt-24">
           <Routes>
             <Route path="/" element={<Homepage />} />
             <Route path="/cars" element={<CarListings />} />
