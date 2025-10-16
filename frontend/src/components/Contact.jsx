@@ -78,16 +78,28 @@ export default function Contact() {
   return (
     <div className="min-h-screen bg-neutral-50">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-primary-600 via-primary-700 to-primary-800 text-white py-20">
-        <div className="container mx-auto container-padding text-center">
-          <h1 className="text-4xl lg:text-5xl font-display font-bold mb-6 animate-slide-up">
+      {/* <section className="relative bg-gradient-to-br from-primary-600 via-primary-700 to-primary-800 text-white py-32 overflow-hidden">
+        <div className="absolute inset-0 bg-black bg-opacity-30"></div>
+        <div className="absolute inset-0 bg-cover bg-center" style={{backgroundImage: 'url(/src/assets/image_0.jpg)'}}></div>
+        <div className="relative container mx-auto container-padding text-center">
+          <h1 className="text-5xl lg:text-6xl font-display font-bold mb-6 animate-slide-up drop-shadow-lg">
             Contact Us
           </h1>
-          <p className="text-xl text-primary-100 mb-8 max-w-2xl mx-auto animate-slide-up" style={{animationDelay: '0.2s'}}>
+          <p className="text-xl lg:text-2xl text-primary-100 mb-8 max-w-3xl mx-auto animate-slide-up drop-shadow-md" style={{animationDelay: '0.2s'}}>
             We're here to help you find your perfect vehicle. Get in touch with our expert team today.
           </p>
+          <div className="flex justify-center space-x-4 animate-slide-up" style={{animationDelay: '0.4s'}}>
+            <div className="bg-white bg-opacity-20 backdrop-blur-sm rounded-full px-6 py-3">
+              <span className="text-2xl mr-2">📞</span>
+              <span className="font-semibold">Call Now</span>
+            </div>
+            <div className="bg-white bg-opacity-20 backdrop-blur-sm rounded-full px-6 py-3">
+              <span className="text-2xl mr-2">💬</span>
+              <span className="font-semibold">Live Chat</span>
+            </div>
+          </div>
         </div>
-      </section>
+      </section> */}
 
       <div className="container mx-auto container-padding py-16">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
@@ -110,52 +122,61 @@ export default function Contact() {
                 </div>
               )}
 
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div>
+              <form onSubmit={handleSubmit} className="space-y-8">
+                <div className="relative">
                   <label htmlFor="name" className="block text-sm font-medium text-neutral-700 mb-2">
                     Full Name *
                   </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                    className="input-field"
-                    placeholder="Your full name"
-                  />
+                  <div className="relative">
+                    <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-neutral-400 text-lg">👤</span>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      required
+                      className="input-field pl-12"
+                      placeholder="Your full name"
+                    />
+                  </div>
                 </div>
 
-                <div>
+                <div className="relative">
                   <label htmlFor="phone" className="block text-sm font-medium text-neutral-700 mb-2">
                     Phone Number
                   </label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    className="input-field"
-                    placeholder="(234) 567-8900"
-                  />
+                  <div className="relative">
+                    <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-neutral-400 text-lg">📞</span>
+                    <input
+                      type="tel"
+                      id="phone"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      className="input-field pl-12"
+                      placeholder="(234) 567-8900"
+                    />
+                  </div>
                 </div>
 
-                <div>
+                <div className="relative">
                   <label htmlFor="message" className="block text-sm font-medium text-neutral-700 mb-2">
                     Message *
                   </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    required
-                    rows="6"
-                    className="input-field resize-none"
-                    placeholder="Tell us how we can help you..."
-                  ></textarea>
+                  <div className="relative">
+                    <span className="absolute left-3 top-3 text-neutral-400 text-lg">💬</span>
+                    <textarea
+                      id="message"
+                      name="message"
+                      value={formData.message}
+                      onChange={handleChange}
+                      required
+                      rows="6"
+                      className="input-field pl-12 resize-none"
+                      placeholder="Tell us how we can help you..."
+                    ></textarea>
+                  </div>
                 </div>
 
                 <button
@@ -179,16 +200,19 @@ export default function Contact() {
           {/* Contact Info Sidebar */}
           <div className="space-y-8">
             {/* Contact Methods */}
-            <div className="card">
-              <h3 className="text-xl font-semibold text-neutral-900 mb-6">Get In Touch</h3>
+            <div className="card bg-gradient-to-br from-white to-neutral-50 shadow-xl border-0">
+              <h3 className="text-xl font-semibold text-neutral-900 mb-6 flex items-center">
+                <span className="text-2xl mr-3">📞</span>
+                Get In Touch
+              </h3>
               <div className="space-y-4">
                 {contactMethods.map((method, index) => (
                   <a
                     key={index}
                     href={method.action}
-                    className="flex items-center p-4 rounded-lg border border-neutral-200 hover:border-primary-300 hover:bg-primary-50 transition-all duration-200 group"
+                    className="flex items-center p-5 rounded-xl border border-neutral-200 hover:border-primary-300 hover:bg-gradient-to-r hover:from-primary-50 hover:to-primary-100 transition-all duration-300 group shadow-sm hover:shadow-md"
                   >
-                    <span className="text-2xl mr-4 group-hover:scale-110 transition-transform duration-200">
+                    <span className="text-3xl mr-4 group-hover:scale-110 transition-transform duration-200">
                       {method.icon}
                     </span>
                     <div>
@@ -204,34 +228,40 @@ export default function Contact() {
             </div>
 
             {/* Business Hours */}
-            <div className="card">
-              <h3 className="text-xl font-semibold text-neutral-900 mb-6">Business Hours</h3>
-              <div className="space-y-3">
-                <div className="flex justify-between items-center py-2 border-b border-neutral-100">
-                  <span className="text-neutral-700">Monday - Friday</span>
-                  <span className="font-semibold text-neutral-900">9:00 AM - 7:00 PM</span>
+            <div className="card bg-gradient-to-br from-white to-neutral-50 shadow-xl border-0">
+              <h3 className="text-xl font-semibold text-neutral-900 mb-6 flex items-center">
+                <span className="text-2xl mr-3">🕒</span>
+                Business Hours
+              </h3>
+              <div className="space-y-4">
+                <div className="flex justify-between items-center py-3 px-4 bg-green-50 rounded-lg border border-green-100">
+                  <span className="text-neutral-700 font-medium">Monday - Friday</span>
+                  <span className="font-semibold text-green-700">9:00 AM - 7:00 PM</span>
                 </div>
-                <div className="flex justify-between items-center py-2 border-b border-neutral-100">
-                  <span className="text-neutral-700">Saturday</span>
-                  <span className="font-semibold text-neutral-900">9:00 AM - 5:00 PM</span>
+                <div className="flex justify-between items-center py-3 px-4 bg-blue-50 rounded-lg border border-blue-100">
+                  <span className="text-neutral-700 font-medium">Saturday</span>
+                  <span className="font-semibold text-blue-700">9:00 AM - 5:00 PM</span>
                 </div>
-                <div className="flex justify-between items-center py-2">
-                  <span className="text-neutral-700">Sunday</span>
-                  <span className="font-semibold text-neutral-500">Closed</span>
+                <div className="flex justify-between items-center py-3 px-4 bg-red-50 rounded-lg border border-red-100">
+                  <span className="text-neutral-700 font-medium">Sunday</span>
+                  <span className="font-semibold text-red-500">Closed</span>
                 </div>
               </div>
             </div>
 
             {/* Quick Actions */}
-            <div className="card">
-              <h3 className="text-xl font-semibold text-neutral-900 mb-6">Quick Actions</h3>
-              <div className="grid grid-cols-1 gap-3">
+            <div className="card bg-gradient-to-br from-white to-neutral-50 shadow-xl border-0">
+              <h3 className="text-xl font-semibold text-neutral-900 mb-6 flex items-center">
+                <span className="text-2xl mr-3">⚡</span>
+                Quick Actions
+              </h3>
+              <div className="grid grid-cols-1 gap-4">
                 {quickActions.map((action, index) => (
                   <button
                     key={index}
-                    className={`w-full ${action.color} text-white py-3 px-4 rounded-lg font-semibold transition-all duration-200 transform hover:scale-105 flex items-center justify-center gap-2`}
+                    className={`w-full ${action.color} text-white py-4 px-5 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-lg flex items-center justify-center gap-3 text-lg`}
                   >
-                    <span>{action.icon}</span>
+                    <span className="text-2xl">{action.icon}</span>
                     {action.title}
                   </button>
                 ))}
@@ -241,62 +271,79 @@ export default function Contact() {
         </div>
 
         {/* Map Section */}
-        <div className="mt-16">
-          <div className="card">
-            <h2 className="text-2xl lg:text-3xl font-display font-bold text-neutral-900 mb-6">
+        <div className="mt-20">
+          <div className="card bg-gradient-to-br from-white to-neutral-50 shadow-2xl border-0">
+            <h2 className="text-3xl lg:text-4xl font-display font-bold text-neutral-900 mb-8 text-center">
               Visit Our Showroom
             </h2>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
               <div>
-                <div className="aspect-video bg-neutral-200 rounded-lg flex items-center justify-center mb-6">
-                  <div className="text-center">
-                    <span className="text-6xl mb-4 block">🗺️</span>
-                    <p className="text-neutral-600">Interactive Map</p>
-                    <p className="text-sm text-neutral-500">123 Car Street, City, State 12345</p>
+                <div className="aspect-video bg-gradient-to-br from-neutral-100 to-neutral-200 rounded-2xl flex items-center justify-center mb-8 shadow-inner relative overflow-hidden">
+                  <div className="absolute inset-0 bg-cover bg-center opacity-20" style={{backgroundImage: 'url(/src/assets/image_1.jpg)'}}></div>
+                  <div className="text-center relative z-10">
+                    <span className="text-7xl mb-4 block animate-bounce">🗺️</span>
+                    <p className="text-neutral-700 font-semibold text-lg">Interactive Map</p>
+                    <p className="text-sm text-neutral-600">123 Car Street, City, State 12345</p>
                   </div>
                 </div>
-                <div className="space-y-4">
-                  <div className="flex items-start gap-3">
-                    <span className="text-2xl mt-1">🚗</span>
+                <div className="space-y-6">
+                  <div className="flex items-start gap-4 p-4 bg-blue-50 rounded-xl border border-blue-100">
+                    <span className="text-3xl mt-1">🚗</span>
                     <div>
-                      <h4 className="font-semibold text-neutral-900">Free Parking</h4>
-                      <p className="text-neutral-600 text-sm">Ample parking available for customers</p>
+                      <h4 className="font-semibold text-neutral-900 text-lg">Free Parking</h4>
+                      <p className="text-neutral-600">Ample parking available for customers</p>
                     </div>
                   </div>
-                  <div className="flex items-start gap-3">
-                    <span className="text-2xl mt-1">☕</span>
+                  <div className="flex items-start gap-4 p-4 bg-green-50 rounded-xl border border-green-100">
+                    <span className="text-3xl mt-1">☕</span>
                     <div>
-                      <h4 className="font-semibold text-neutral-900">Customer Lounge</h4>
-                      <p className="text-neutral-600 text-sm">Comfortable waiting area with refreshments</p>
+                      <h4 className="font-semibold text-neutral-900 text-lg">Customer Lounge</h4>
+                      <p className="text-neutral-600">Comfortable waiting area with refreshments</p>
                     </div>
                   </div>
-                  <div className="flex items-start gap-3">
-                    <span className="text-2xl mt-1">👨‍👩‍👧‍👦</span>
+                  <div className="flex items-start gap-4 p-4 bg-purple-50 rounded-xl border border-purple-100">
+                    <span className="text-3xl mt-1">👨‍👩‍👧‍👦</span>
                     <div>
-                      <h4 className="font-semibold text-neutral-900">Family Friendly</h4>
-                      <p className="text-neutral-600 text-sm">Welcome environment for the whole family</p>
+                      <h4 className="font-semibold text-neutral-900 text-lg">Family Friendly</h4>
+                      <p className="text-neutral-600">Welcome environment for the whole family</p>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <div className="space-y-6">
+              <div className="space-y-8">
                 <div>
-                  <h3 className="text-xl font-semibold text-neutral-900 mb-4">Directions</h3>
-                  <div className="space-y-3 text-neutral-700">
-                    <p><strong>From Downtown:</strong> Take Main Street north for 2 miles, turn left on Car Street.</p>
-                    <p><strong>From Highway 101:</strong> Exit 45, follow signs for 1 mile to dealership.</p>
-                    <p><strong>Public Transport:</strong> Bus routes 12, 15, and 22 stop within walking distance.</p>
+                  <h3 className="text-2xl font-semibold text-neutral-900 mb-6 flex items-center">
+                    <span className="text-3xl mr-3">🧭</span>
+                    Directions
+                  </h3>
+                  <div className="space-y-4 text-neutral-700">
+                    <div className="flex items-start gap-3 p-3 bg-neutral-50 rounded-lg">
+                      <span className="text-2xl mt-1">🏙️</span>
+                      <p><strong className="text-neutral-900">From Downtown:</strong> Take Main Street north for 2 miles, turn left on Car Street.</p>
+                    </div>
+                    <div className="flex items-start gap-3 p-3 bg-neutral-50 rounded-lg">
+                      <span className="text-2xl mt-1">🛣️</span>
+                      <p><strong className="text-neutral-900">From Highway 101:</strong> Exit 45, follow signs for 1 mile to dealership.</p>
+                    </div>
+                    <div className="flex items-start gap-3 p-3 bg-neutral-50 rounded-lg">
+                      <span className="text-2xl mt-1">🚌</span>
+                      <p><strong className="text-neutral-900">Public Transport:</strong> Bus routes 12, 15, and 22 stop within walking distance.</p>
+                    </div>
                   </div>
                 </div>
 
-                <div className="bg-primary-50 p-6 rounded-lg">
-                  <h4 className="font-semibold text-primary-900 mb-2">Planning Your Visit?</h4>
-                  <p className="text-primary-700 text-sm mb-4">
+                <div className="bg-gradient-to-r from-primary-50 to-primary-100 p-8 rounded-2xl border border-primary-200 shadow-lg">
+                  <h4 className="font-semibold text-primary-900 mb-3 text-xl flex items-center">
+                    <span className="text-3xl mr-3">📅</span>
+                    Planning Your Visit?
+                  </h4>
+                  <p className="text-primary-700 mb-6 text-base">
                     Call ahead to schedule your visit and let us know which vehicles you're interested in.
                     We'll have everything ready for you!
                   </p>
-                  <a href="tel:+1234567890" className="btn-primary text-sm">
+                  <a href="tel:+1234567890" className="btn-primary text-base py-3 px-6 inline-flex items-center gap-2">
+                    <span>📞</span>
                     Call to Schedule
                   </a>
                 </div>
