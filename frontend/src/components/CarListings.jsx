@@ -71,40 +71,48 @@ export default function CarListings() {
         <div className="flex flex-col lg:flex-row gap-8">
           {/* Filters Sidebar */}
           <div className={`lg:w-80 ${isFiltersOpen ? 'block' : 'hidden lg:block'}`}>
-            <div className="bg-white rounded-xl shadow-soft p-6 sticky top-24">
-              <div className="flex items-center justify-between mb-6">
-                <h2 className="text-xl font-semibold text-neutral-900">Filters</h2>
+            <div className="bg-gradient-to-br from-white to-neutral-50 rounded-2xl shadow-xl p-6 sticky top-24 border border-neutral-200">
+              <div className="flex items-center justify-between mb-8">
+                <h2 className="text-2xl font-bold text-neutral-900 flex items-center gap-2">
+                  <span className="text-2xl">🔍</span>
+                  Filters
+                </h2>
                 <button
                   onClick={() => setIsFiltersOpen(false)}
-                  className="lg:hidden text-neutral-500 hover:text-neutral-700"
+                  className="lg:hidden text-neutral-500 hover:text-neutral-700 p-1 rounded-full hover:bg-neutral-100 transition-colors"
                 >
                   ✕
                 </button>
               </div>
 
               {/* Search */}
-              <div className="mb-6">
-                <label className="block text-sm font-medium text-neutral-700 mb-2">
-                  Search
+              <div className="mb-8">
+                <label className="block text-sm font-semibold text-neutral-800 mb-3 flex items-center gap-2">
+                  <span className="text-lg">🔎</span>
+                  Search Cars
                 </label>
-                <input
-                  type="text"
-                  placeholder="Make, model, or keyword..."
-                  value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
-                  className="input-field"
-                />
+                <div className="relative">
+                  <input
+                    type="text"
+                    placeholder="Make, model, or keyword..."
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                    className="input-field pl-10"
+                  />
+                  <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-neutral-400">🔍</span>
+                </div>
               </div>
 
               {/* Fuel Type */}
-              <div className="mb-6">
-                <label className="block text-sm font-medium text-neutral-700 mb-2">
+              <div className="mb-8">
+                <label className="block text-sm font-semibold text-neutral-800 mb-3 flex items-center gap-2">
+                  <span className="text-lg">⛽</span>
                   Fuel Type
                 </label>
                 <select
                   value={selectedType}
                   onChange={(e) => setSelectedType(e.target.value)}
-                  className="input-field"
+                  className="input-field bg-white border-2 border-neutral-200 focus:border-primary-500 transition-colors"
                 >
                   <option value="">All Fuel Types</option>
                   <option value="Gasoline">Gasoline</option>
@@ -115,14 +123,15 @@ export default function CarListings() {
               </div>
 
               {/* Transmission */}
-              <div className="mb-6">
-                <label className="block text-sm font-medium text-neutral-700 mb-2">
+              <div className="mb-8">
+                <label className="block text-sm font-semibold text-neutral-800 mb-3 flex items-center gap-2">
+                  <span className="text-lg">⚙️</span>
                   Transmission
                 </label>
                 <select
                   value={selectedTransmission}
                   onChange={(e) => setSelectedTransmission(e.target.value)}
-                  className="input-field"
+                  className="input-field bg-white border-2 border-neutral-200 focus:border-primary-500 transition-colors"
                 >
                   <option value="">All Transmissions</option>
                   <option value="Automatic">Automatic</option>
@@ -132,30 +141,37 @@ export default function CarListings() {
               </div>
 
               {/* Price Range */}
-              <div className="mb-6">
-                <label className="block text-sm font-medium text-neutral-700 mb-2">
-                  Price Range: {priceRange[0].toLocaleString()}ETB - {priceRange[1].toLocaleString()}ETB
+              <div className="mb-8">
+                <label className="block text-sm font-semibold text-neutral-800 mb-3 flex items-center gap-2">
+                  <span className="text-lg">💰</span>
+                  Price Range
                 </label>
-                <input
-                  type="range"
-                  min="0"
-                  max="100000"
-                  step="1000"
-                  value={priceRange[1]}
-                  onChange={(e) => setPriceRange([0, parseInt(e.target.value)])}
-                  className="w-full h-2 bg-neutral-200 rounded-lg appearance-none cursor-pointer"
-                />
+                <div className="bg-white p-4 rounded-lg border-2 border-neutral-200">
+                  <div className="text-center mb-3 text-neutral-700 font-medium">
+                    {priceRange[0].toLocaleString()}ETB - {priceRange[1].toLocaleString()}ETB
+                  </div>
+                  <input
+                    type="range"
+                    min="0"
+                    max="150000"
+                    step="5000"
+                    value={priceRange[1]}
+                    onChange={(e) => setPriceRange([0, parseInt(e.target.value)])}
+                    className="w-full h-3 bg-gradient-to-r from-primary-400 to-primary-600 rounded-lg appearance-none cursor-pointer slider-thumb"
+                  />
+                </div>
               </div>
 
               {/* Sort */}
-              <div className="mb-6">
-                <label className="block text-sm font-medium text-neutral-700 mb-2">
+              <div className="mb-8">
+                <label className="block text-sm font-semibold text-neutral-800 mb-3 flex items-center gap-2">
+                  <span className="text-lg">📊</span>
                   Sort By
                 </label>
                 <select
                   value={sortBy}
                   onChange={(e) => setSortBy(e.target.value)}
-                  className="input-field"
+                  className="input-field bg-white border-2 border-neutral-200 focus:border-primary-500 transition-colors"
                 >
                   <option value="price-low">Price: Low to High</option>
                   <option value="price-high">Price: High to Low</option>
@@ -168,9 +184,9 @@ export default function CarListings() {
               {/* Clear Filters */}
               <button
                 onClick={clearFilters}
-                className="w-full btn-secondary"
+                className="w-full bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white font-semibold py-3 px-4 rounded-lg transition-all duration-200 shadow-md hover:shadow-lg transform hover:scale-105"
               >
-                Clear All Filters
+                🗑️ Clear All Filters
               </button>
             </div>
           </div>
